@@ -5,10 +5,10 @@ export const  useFormFields = (initialState) => {
 
     return [
         fields,
-        function(event) {
+        function(e) {
             setValues({
                 ...fields,
-                [event.target.id]: event.target.value
+                [e.target.name]: e.target.value
             });
         }
     ];
