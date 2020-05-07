@@ -25,7 +25,8 @@ module.exports = {
     },
     output: {
         filename: process.env.production ? '[name].[chunkhash].js' : '[name].[hash].js',
-        path: path.join(__dirname, 'dist')
+        path: path.join(__dirname, 'dist'),
+        publicPath: "/"
     },
     plugins: [
         new MiniCssExtractPlugin({
@@ -74,6 +75,7 @@ module.exports = {
     },
     devServer: {
         port:4000,
-        open:true
+        open:true,
+        historyApiFallback: true
     }
 }
