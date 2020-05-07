@@ -1,10 +1,10 @@
 import React from 'react';
+import LoginView from "../../../views/User/LoginView";
+
 
 const UserLogin = () => {
     return (
-        <div>
-           This is user login
-        </div>
+       <LoginView/>
     );
 };
 

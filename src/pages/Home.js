@@ -1,9 +1,9 @@
 import React from 'react';
-import HomeView from "../views/Home";
+import HomeView from "../views/Home/Home";
 
-const Home = () => {
+const Home = (props) => {
     return (
-        <HomeView/>
+        <HomeView route={props}/>
     );
 };
 
