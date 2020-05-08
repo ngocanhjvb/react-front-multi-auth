@@ -8,7 +8,7 @@ export const  useFormFields = (initialState) => {
         function(e) {
             setValues({
                 ...fields,
-                [e.target.name]: e.target.value
+                [e.target.id]: e.target.value
             });
         }
     ];

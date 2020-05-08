@@ -1,10 +1,9 @@
 import React from 'react';
+import RegisterView from "../../../views/User/RegisterView";
 
 const UserRegister = () => {
     return (
-        <div>
-            this is user register
-        </div>
+        <RegisterView/>
     );
 };
 

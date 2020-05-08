@@ -1,10 +1,9 @@
 import React from 'react';
+import RegisterView from "../../../views/Admin/RegisterView";
 
 const AdminRegister = () => {
     return (
-        <div>
-            this is admin register
-        </div>
+      <RegisterView/>
     );
 };
 
