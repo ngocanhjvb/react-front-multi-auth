@@ -19,20 +19,43 @@ const RegisterView = () => {
                     <h2><b>Welcome to Admin Register Page</b></h2>
                     <form onSubmit={adminRegister}>
                         <div>
-                            <TextField id="name" type="text" className={classes.fullWidth} required variant="outlined"
-                                       margin="normal" label="Name"></TextField>
+                            <TextField id="name"
+                                       type="text"
+                                       className={classes.fullWidth}
+                                       required variant="outlined"
+                                       margin="normal"
+                                       label="Name">
+                            </TextField>
                         </div>
                         <div>
-                            <TextField id="email" type="email" className={classes.fullWidth} required
-                                       variant="outlined" margin="normal" label="Email"></TextField>
+                            <TextField id="email"
+                                       type="email"
+                                       className={classes.fullWidth}
+                                       required
+                                       variant="outlined"
+                                       margin="normal"
+                                       label="Email">
+                            </TextField>
                         </div>
                         <div>
-                            <TextField id="password" type="password" className={classes.fullWidth} required
-                                       variant="outlined" margin="normal" label="password"></TextField>
+                            <TextField id="password"
+                                       type="password"
+                                       className={classes.fullWidth}
+                                       required
+                                       variant="outlined"
+                                       margin="normal"
+                                       label="password">
+                            </TextField>
                         </div>
                         <div>
-                            <TextField id="confirm" type="password" className={classes.fullWidth} required
-                                       variant="outlined" margin="normal" label="Confirm Password"></TextField>
+                            <TextField id="password_confirmation"
+                                       type="password"
+                                       className={classes.fullWidth}
+                                       required
+                                       variant="outlined"
+                                       margin="normal"
+                                       label="Confirm Password">
+                            </TextField>
                         </div>
                         <Button type="submit" className={classes.fullWidth} color="primary" variant="contained"
                                 endIcon={<AccountCircle/>}><b>Register</b></Button>

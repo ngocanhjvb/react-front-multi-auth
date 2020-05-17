@@ -1,60 +1,35 @@
-class HttpService
-{
-    url = "http://localhost:8000";
+class HttpService {
+    baseUrl = "http://localhost:8000";
 
 
-    postData = async(item ,added_url,tokenId="") =>{
+    getData = async (url, tokenId="") => {
         const token = await localStorage.getItem(tokenId);
+        const requestOption = {
+            method: 'GET', // *GET, POST, PUT, DELETE, etc.
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': 'Bearer' + token
 
-        const requestOptions = this.postRequestOptions(token,item);
-
-        return fetch(this.url+"/"+added_url, requestOptions).then(
-            response=>response.json());
-    }
-
-
-    getData = async(added_url,tokenId="") =>
-    {
-        const token = await localStorage.getItem(tokenId);
-        const requestOptions = this.getRequestOptions(token);
-
-        return fetch(this.url+"/"+added_url, requestOptions).then(
-            response=>response.json());
-    }
-
-
-    getRequestOptions = (token) =>
-    {
-        let requestOptions = {
-            method:'GET',
-            headers:{
-                'Authorization':token,
-                'Content-type':'application/json',
-            }
-        }
-
-        return requestOptions;
-    }
-
-
-    postRequestOptions = (token,item) =>
-    {
-        let requestOptions = {
-            method:'POST',
-            headers:{'Authorization':token,
-                'Content-type':'Application/json',
             },
-
-            body:JSON.stringify(item)
-
         }
-
-        return requestOptions;
+        let response = await fetch(this.baseUrl + '/' + url, requestOption);
+        return response.json()
     }
 
+    postData = async (url, tokenId="", data) => {
+        const token = await localStorage.getItem(tokenId);
+        const requestOption = {
+            method: 'POST', // *GET, POST, PUT, DELETE, etc.
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': 'Bearer' + token
 
-
-
+            },
+            body: JSON.stringify(data) // body data type must match "Content-Type" header
+        }
+        let response = await fetch(this.baseUrl + '/' + url, requestOption);
+        return response.json()
+    }
 
 }
 
