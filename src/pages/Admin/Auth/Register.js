@@ -1,10 +1,11 @@
-import React from 'react';
-import RegisterView from "../../../views/Admin/RegisterView";
+import React from 'react'
+import RegisterView from '../../../views/Admin/Auth/RegisterView'
 
-const AdminRegister = () => {
+
+export default function AdminRegister() {
     return (
-      <RegisterView/>
-    );
-};
-
-export default AdminRegister;
+        <div>
+       <RegisterView/>
+        </div>
+    )
+}

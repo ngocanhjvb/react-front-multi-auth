@@ -1,6 +1,9 @@
+
+
+
 export const errorMessage = (dataObject) =>{
     let str='';
-
+  
     for(var objects in dataObject){
         if(typeof dataObject[objects][0] == 'string'){
             str+='<div class="alert alert-danger add-padding">'+' ' + dataObject[objects][0]+'</div>';
@@ -8,27 +11,27 @@ export const errorMessage = (dataObject) =>{
             str+= '<div class="alert alert-danger add-padding">'+ ' ' + (dataObject[objects][0]+'</div>');
         }
     }
-
+  
     return str;
-}
+  }
 
 
 export const displayErrorMessages = (errorResponse,displayErr) =>
 {
-    if(typeof errorResponse == 'string'){
-        displayErr.innerHTML = '<div class="alert alert-danger add-padding">'+errorResponse+'</div>';
-        return;
-    }else if(typeof errorResponse == 'undefined')
+  if(typeof errorResponse == 'string'){
+    displayErr.innerHTML = '<div class="alert alert-danger add-padding">'+errorResponse+'</div>';
+    return;
+  }else if(typeof errorResponse == 'undefined')
+  {
+    displayErr.innerHTML = '<div class="alert alert-danger add-padding">action failed error</div>';
+  }else
+  {
+    const lengthErrObject = Object.keys(errorResponse).length;
+    if(lengthErrObject > 0)
     {
-        displayErr.innerHTML = '<div class="alert alert-danger add-padding">action failed error</div>';
-    }else
-    {
-        const lengthErrObject = Object.keys(errorResponse).length;
-        if(lengthErrObject > 0)
-        {
-            const err = errorMessage(errorResponse);
-            displayErr.innerHTML = err;
-        }
+      const err = errorMessage(errorResponse);
+      displayErr.innerHTML = err;
     }
+  }
 
 }

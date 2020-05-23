@@ -1,10 +1,10 @@
-import React from 'react';
-import RegisterView from "../../../views/User/RegisterView";
+import React from 'react'
+import RegisterView from '../../../views/User/Auth/RegisterView'
 
-const UserRegister = () => {
+export default function UserRegister() {
     return (
-        <RegisterView/>
-    );
-};
-
-export default UserRegister;
+        <div>
+           <RegisterView/>
+        </div>
+    )
+}

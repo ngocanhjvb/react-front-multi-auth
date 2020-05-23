@@ -1,11 +1,13 @@
-import React from 'react';
+import React from 'react'
+import ProfileView  from '../../views/Admin/ProfileView'
 
-const Profile = () => {
+export default function Profile() {
     return (
         <div>
-            admin profile
+            
+            <ProfileView />
         </div>
-    );
-};
+    )
+}
 
-export default Profile;
+

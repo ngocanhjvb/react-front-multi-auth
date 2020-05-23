@@ -1,10 +1,10 @@
-import React from 'react';
-import HomeView from "../views/Home/Home";
+import React from 'react'
+import HomeView from '../views/Home/HomeView'
 
-const Home = (props) => {
+export default function Home(props) {
     return (
-        <HomeView route={props}/>
-    );
-};
-
-export default Home;
+    <div>
+        <HomeView props={props}/>
+    </div>
+    )
+}

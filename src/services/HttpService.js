@@ -1,37 +1,71 @@
-class HttpService {
-    baseUrl = "http://localhost:8000";
+class HttpService
+ {
+    url = process.env.API_URL
 
 
-    getData = async (url, tokenId="") => {
-        const token = await localStorage.getItem(tokenId);
-        const requestOption = {
-            method: 'GET', // *GET, POST, PUT, DELETE, etc.
-            headers: {
-                'Content-Type': 'application/json',
-                'Authorization': 'Bearer' + token
+    postData = async(item ,added_url,tokenId="") =>{
+    const token = await localStorage.getItem(tokenId);
 
-            },
-        }
-        let response = await fetch(this.baseUrl + '/' + url, requestOption);
-        return response.json()
+    const requestOptions = this.postRequestOptions(token,item);
+
+    return fetch(this.url+"/"+added_url, requestOptions).then(
+        response=>response.json());
     }
 
-    postData = async (url, tokenId="", data) => {
-        const token = await localStorage.getItem(tokenId);
-        const requestOption = {
-            method: 'POST', // *GET, POST, PUT, DELETE, etc.
-            headers: {
-                'Content-Type': 'application/json',
-                'Authorization': 'Bearer' + token
 
-            },
-            body: JSON.stringify(data) // body data type must match "Content-Type" header
-        }
-        let response = await fetch(this.baseUrl + '/' + url, requestOption);
-        return response.json()
+    getData = async(added_url,tokenId="") =>
+    {
+        const token = await localStorage.getItem(tokenId);
+       const requestOptions = this.getRequestOptions(token);
+
+        return fetch(this.url+"/"+added_url, requestOptions).then(
+            response=>response.json());
     }
 
-}
+
+    getRequestOptions = (token) =>
+    {
+        let requestOptions = {
+            method:'GET',
+            headers:{
+                'Authorization':token,
+             'Content-type':'application/json',
+        }
+        }
+
+        return requestOptions;
+    }
 
 
-export default HttpService;
+    postRequestOptions = (token,item) =>
+    {
+        let requestOptions = {
+            method:'POST',
+            headers:{'Authorization':token,
+             'Content-type':'Application/json',
+        },
+
+        body:JSON.stringify(item)
+
+        }
+
+        return requestOptions;
+    }
+
+
+
+
+
+    }
+
+
+    export default HttpService;
+
+
+
+
+
+
+
+
+

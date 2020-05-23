@@ -1,10 +1,10 @@
-import React from 'react';
-import LoginView from "../../../views/Admin/LoginView";
+import React from 'react'
+import LoginView from '../../../views/Admin/Auth/LoginView'
 
-const AdminLogin = () => {
+export default function AdminLogin(props) {
     return (
-      <LoginView/>
-    );
-};
-
-export default AdminLogin;
+        <div>
+        <LoginView props={props} />
+        </div>
+    )
+}
