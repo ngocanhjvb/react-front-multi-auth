@@ -2,6 +2,7 @@ const path = require('path');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const webpack = require('webpack')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
+const Dotenv = require('dotenv-webpack');
 
 const VENDOR_LIBS = [
     "axios",
@@ -38,7 +39,8 @@ module.exports = {
         }),
         new HtmlWebpackPlugin({
             template: "src/index.html"
-        })
+        }),
+        new Dotenv()
     ],
     module: {
         rules: [
