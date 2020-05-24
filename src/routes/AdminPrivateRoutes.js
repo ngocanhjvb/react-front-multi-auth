@@ -1,11 +1,11 @@
 import React from 'react'
 import {Switch,Route,Redirect} from 'react-router-dom'
-import Profile from './pages/User/Profile'
-import  Header from './layout/user/header'
+import Profile from '../pages/Admin/Profile'
+import  Header from '../layout/admin/header'
 
 
 
-export default function UserPrivateRoutes(props) {
+export default function AdminPrivateRoutes(props) {
     return (
         <div>
             <Header props={props}/>

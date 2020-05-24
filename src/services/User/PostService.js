@@ -1,12 +1,12 @@
 import HttpService from '../HttpService';
 
 
-export const LoadUserProfile = () =>{
+export const createPost = (item) =>{
     const http = new HttpService();
-    let signUpUrl = "user/view-profile";
+    let signUpUrl = "user/create-post";
     const tokenId = "user-token";
     try{
-        return http.getData(signUpUrl,tokenId).then(data=>{
+        return http.postData(item,signUpUrl,tokenId).then(data=>{
             if(data.hasOwnProperty('status') && data.status === 401){
                 localStorage.removeItem('user-token')
                 location.reload()
@@ -14,9 +14,7 @@ export const LoadUserProfile = () =>{
             return data;
         })
     }catch (e) {
-      console.log(e)
+        console.log(e)
     }
 
 }
-
-

@@ -7,11 +7,12 @@ import Button from '@material-ui/core/Button';
 import {useStyles} from '../../styles'
 import {useDispatch,useSelector} from 'react-redux'
 import {AdminLogOutAction } from '../../store/actions/Admin/Auth/AuthActions'
+import {Link} from "react-router-dom";
 
 
 
 const Header = (props) => {
-   
+
   const classes = useStyles();
   const dispatch = useDispatch();
   const authResponse = useSelector(state => state.adminAuth.authResponse);
@@ -19,7 +20,7 @@ const Header = (props) => {
   const logOut = ()=>{
     dispatch(AdminLogOutAction());
   }
-   
+
 
   useEffect(() => {
     if(authResponse!="" && authResponse.success==true)
@@ -32,28 +33,18 @@ const Header = (props) => {
      alert(authResponse.message);
    }
   }, [authResponse])
-  
-
-
-
-
-  
- 
-
-  
-
 
     return (
         <div className={classes.root}>
       <CssBaseline />
       <AppBar position="fixed" >
         <Toolbar>
-         
+
 
           <Typography variant="h6" noWrap className={classes.title}>
-            TechBuildz
+            <Link to="/">Home</Link>
           </Typography>
-     
+
           <Typography variant="h6" noWrap className={classes.title}>
             Welcome to the Admin Dashboard
           </Typography>
@@ -62,7 +53,7 @@ const Header = (props) => {
 
         </Toolbar>
       </AppBar>
-     
+
       </div>
     );
 }

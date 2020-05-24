@@ -1,44 +1,38 @@
 const initState = {
     adminProfile:""
     }
-     
+
 
     const AdminProfileReducer = (state=initState, action) =>{
-        switch(action.type){
-            
-                case 'LOADING':
-                    return {
-                        ...state,
-                        adminProfile:'loading'
-                    }
+        switch (action.type) {
 
-          case 'LOAD_PROFILE_SUCCESS':
-              console.log(action)
-              return {
-                  ...state,
-                  adminProfile:action.res,
-              }
-    
-              case 'LOAD_PROFILE_ERROR':
-                    console.log(action)
+            case 'LOADING':
+                return {
+                    ...state,
+                    adminProfile: 'loading'
+                }
 
-                    return {
-                        ...state,
-                        adminProfile:action.res,
-                    }
-    
-                    case 'CODE_ERROR':
-                            console.log(action)
-                            return {
+            case 'LOAD_PROFILE_ADMIN_SUCCESS':
+            case 'LOAD_PROFILE_ADMIN_ERROR':
+                console.log(action)
+
+                return {
+                    ...state,
+                    adminProfile: action.res,
+                }
+
+            case 'CODE_ERROR':
+                console.log(action)
+                return {
                                 ...state,
                                 adminProfile:'there seems to be a problem please refresh your browser',
                             }
-                            
-    
-                default:
+
+
+            default:
                     return state
-    
+
         }
     }
-    
-    export default AdminProfileReducer;
+
+export default AdminProfileReducer;

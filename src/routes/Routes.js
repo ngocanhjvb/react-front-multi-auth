@@ -1,12 +1,12 @@
 import React from 'react';
 import {Switch, Route, Redirect} from 'react-router-dom';
-import Home from './pages/Home'
+import Home from '../pages/Home'
 import UserPrivateRoutes from './UserPrivateRoutes'
 import AdminPrivateRoutes from './AdminPrivateRoutes'
-import UserLogin from './pages/User/Auth/Login'
-import AdminLogin from './pages/Admin/Auth/Login'
-import UserRegister from './pages/User/Auth/Register'
-import AdminRegister from './pages/Admin/Auth/Register'
+import UserLogin from '../pages/User/Auth/Login'
+import AdminLogin from '../pages/Admin/Auth/Login'
+import UserRegister from '../pages/User/Auth/Register'
+import AdminRegister from '../pages/Admin/Auth/Register'
 import {Guard} from './Guard'
 
 

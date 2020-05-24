@@ -7,7 +7,7 @@ export const useStyles = makeStyles(theme => ({
         margin: theme.spacing(1),
       },
     },
-    
+
     containerDiv: {
       flex:'auto',
       position: 'fixed',
@@ -28,7 +28,7 @@ export const useStyles = makeStyles(theme => ({
     fullWidth:{
       width:'90%',
      marginBottom:'25px',
-     marginTop:'20px'
+     marginTop:'50px'
     },
     linkContainer:{
      marginBottom:'20px'
@@ -45,6 +45,6 @@ export const useStyles = makeStyles(theme => ({
      marginLeft:'15%',
      marginTop:'80px'
    }
-   
+
   }));
 
